@@ -5,20 +5,20 @@
 class Kubekumber < Formula
   desc ""
   homepage "https://github.com/kubekumber/homebrew-tools"
-  version "0.0.9"
+  version "0.1.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kubekumber/kubekumber/releases/download/v0.0.9/kubekumber_0.0.9_Darwin_arm64.tar.gz"
-      sha256 "ccafc1ecfb4101f2308112d3d6ee25357cf96738460694e918d9bad276fda2bd"
+    if Hardware::CPU.intel?
+      url "https://github.com/kubekumber/kubekumber/releases/download/v0.1.0/kubekumber_0.1.0_Darwin_x86_64.tar.gz"
+      sha256 "ac29d63ec8c15524141b8235a7b47cda896248bb50a1f79809ca30daa6a77868"
 
       def install
         bin.install "kubekumber"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kubekumber/kubekumber/releases/download/v0.0.9/kubekumber_0.0.9_Darwin_x86_64.tar.gz"
-      sha256 "9e56b621c9a93238ede097e27abaaddb617032e77e3566f59e2034bcafbfa43c"
+    if Hardware::CPU.arm?
+      url "https://github.com/kubekumber/kubekumber/releases/download/v0.1.0/kubekumber_0.1.0_Darwin_arm64.tar.gz"
+      sha256 "39fd6cd2424fbaf8bd38f896eb533252a561164994f749df0cc3b4f516792318"
 
       def install
         bin.install "kubekumber"
@@ -27,17 +27,17 @@ class Kubekumber < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kubekumber/kubekumber/releases/download/v0.0.9/kubekumber_0.0.9_Linux_arm64.tar.gz"
-      sha256 "00ec4917903907e550e9020c4b4a5e3a02c990e9755a27a64cb149d5942e917b"
+    if Hardware::CPU.intel?
+      url "https://github.com/kubekumber/kubekumber/releases/download/v0.1.0/kubekumber_0.1.0_Linux_x86_64.tar.gz"
+      sha256 "d597c28a44b3868fb1524c78b07b1ccb5b9d155a7a0078a3d8e29e477c781b3e"
 
       def install
         bin.install "kubekumber"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kubekumber/kubekumber/releases/download/v0.0.9/kubekumber_0.0.9_Linux_x86_64.tar.gz"
-      sha256 "d87dccce75872192655ed110bcb735b08247269d451521bc40a961d8acae5fee"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kubekumber/kubekumber/releases/download/v0.1.0/kubekumber_0.1.0_Linux_arm64.tar.gz"
+      sha256 "ccc2504f0b69b93fd9024448b91fe317b9ef6f6b03650b0b31119d5a7d13ae0d"
 
       def install
         bin.install "kubekumber"
